@@ -16,5 +16,5 @@ try{
 
 // ===== 모든 스레드에서 발생하는 예외 처리
 process.on('uncaughtException', (error) => {
-  console.log('> uncaughtException ~~')
+  console.log('> uncaughtException ~~');
 })

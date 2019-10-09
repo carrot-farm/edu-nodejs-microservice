@@ -50,13 +50,13 @@ function onRequest(res, method, pathname, params) {
   // uri 별 요청 처리.
   switch (pathname) {
     case "/members":
-      members.onRequest(res, method, pathname, params, Response);
+      members.onRequest(res, method, pathname, params, response);
       break;
     case "/goods":
-      goods.onRequest(res, method, pathname, params, Response);
+      goods.onRequest(res, method, pathname, params, response);
       break;
     case "/purchases":
-      purchases.onRequest(res, method, pathname, params, Response);
+      purchases.onRequest(res, method, pathname, params, response);
       break;
     default:
       res.writeHead(404);

@@ -139,13 +139,14 @@ function purchases(callback) {
   }
 }
 
+// ===== 테스트 코드 실행
 console.log("> members ============ ");
 members(() => {
   console.log("> goods ============ ");
-  goods(() => {
-    console.log("> purcharses ============ ");
-    purchases(() => {
-      console.log("> done");
-    });
-  });
+  // goods(() => {
+  //   console.log("> purcharses ============ ");
+  //   purchases(() => {
+  //     console.log("> done");
+  //   });
+  // });
 });
