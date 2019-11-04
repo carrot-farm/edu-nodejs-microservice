@@ -1,7 +1,6 @@
 /************************************
  * 구매 관리
  ************************************/
-
 // ===== db 설정
 const mysql = require("mysql");
 const conn = {
@@ -46,7 +45,7 @@ function register(method, pathname, params, cb) {
     connection.query(
       `
         INSERT INTO purchases(userid, goodsid)
-        VALUES(?, ?);
+        VALUES(?, ?)
       `,
       [params.userid, params.goodsid],
       (error, results, fields) => {

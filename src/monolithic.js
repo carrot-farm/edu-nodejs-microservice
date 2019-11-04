@@ -11,6 +11,11 @@ const server = http
     const uri = url.parse(req.url, true); // uri 파싱
     const pathname = uri.pathname; // uri 얻기
 
+    // 에러 처리
+    req.on('error', (err) => {
+      console.err('node> request Error : ', err.stack);
+    })
+
     // 파라메터 얻기
     if (method === "POST" || method === "PUT") {
       let body = "";
@@ -34,10 +39,9 @@ const server = http
       // GET 과 DELETE 면 query 정보를 읽음.
       onRequest(res, method, pathname, uri.query);
     }
-    console.log("> start Server 8000");
-
+    console.log("node> start Server 8000");
   })
-  .listen(8000);
+  .listen(8000)
 
 /**
  * 요청에 대해 회원 관리, 상품 관리, 구매 관리 모듈별로 분기

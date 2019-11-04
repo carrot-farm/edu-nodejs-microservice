@@ -1,0 +1,16 @@
+@host=http://localhost:8000
+
+
+# 멤버 등록
+POST {{host}}/members
+Content-Type: application/json
+
+{
+  "username": "당근",
+  "password": "admin12345"
+}
+
+
+
+# 멤버 정보 불러오기
+GET http://localhost:8000/members

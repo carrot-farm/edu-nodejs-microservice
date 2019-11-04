@@ -19,6 +19,7 @@ exports.onRequest = (res, method, pathname, params, cb) => {
         process.nextTick(cb, res, response);
       });
       case "GET":
+        console.log('node> request GET member')
         return inquiry(method, pathname, params, response => {
           process.nextTick(cb, res, response);
         });
@@ -38,6 +39,8 @@ function register(method, pathname, params, cb) {
     errorcode: 0,
     errormessage: "success"
   };
+
+  console.log('node> register : ', params);
 
   // 유효성 검사
   if (params.username === null || params.password === null) {

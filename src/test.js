@@ -14,14 +14,13 @@ const options = {
 
 /**
  * 리퀘스트 함수 정의
- * @param {func}} cb
- * @param {object} params
+ * .param {func} cb
+ * .param {object} params
  */
 function request(cb, params) {
   // 리퀘스트
   const req = http.request(options, res => {
     let data = "";
-
     res.on("data", chunk => {
       data += chunk;
       console.log("> res data : ", data);
@@ -44,7 +43,7 @@ function request(cb, params) {
 
 /**
  * 상품관리 테스트 실행 함수
- * @param {func} callback
+ * .param {func} callback
  */
 function goods(callback) {
   goods_post(() => {
@@ -82,11 +81,12 @@ function goods(callback) {
  * @param {func} callback
  */
 function members(callback) {
-  members_delete(() => {
-    members_post(() => {
-      members_get(callback);
-    });
-  });
+  // members_delete(() => {
+  //   members_post(() => {
+  //     members_get(callback);
+  //   });
+  // });
+  members_get(callback);
 
   // 멤버 생성
   function members_post(cb) {
@@ -142,7 +142,7 @@ function purchases(callback) {
 // ===== 테스트 코드 실행
 console.log("> members ============ ");
 members(() => {
-  console.log("> goods ============ ");
+  // console.log("> goods ============ ");
   // goods(() => {
   //   console.log("> purcharses ============ ");
   //   purchases(() => {
